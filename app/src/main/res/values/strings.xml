@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">OrganDonor</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="signin">Sign In</string>
+    <string name="orregister">Or Register</string>
+    <string name="forgot">Forgot Password ?</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="username">Username</string>
+    <string name="signup">Register</string>
+    <string name="orlogin">Or Login</string>
 </resources>

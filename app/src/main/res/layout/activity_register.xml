@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Authentication.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,6 +19,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/organ_donor" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:hint="@string/username"
+            android:textColorHint="@color/appColor"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/appColor"
+            app:theme="@style/MyEditFields">
+
+            <EditText
+                android:id="@+id/editUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textWebEmailAddress"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -32,7 +57,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_username"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/appColor"
             app:theme="@style/MyEditFields">
@@ -43,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textWebEmailAddress"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/wrapper_username" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +102,36 @@
                 tools:targetApi="o" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_confirmpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:hint="@string/confirmpassword"
+            android:textColorHint="@color/appColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_password"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/appColor"
+            app:theme="@style/MyEditFields">
+
+            <EditText
+                android:id="@+id/editConfPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:importantForAutofill="noExcludeDescendants"
+                android:inputType="textPassword"
+                android:textColor="@color/appColor"
+                android:textColorHint="@color/appColor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/appColor"
+                tools:targetApi="o" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="300dp"
@@ -87,40 +142,28 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:textSize="19sp"
-            android:text="@string/signin"
+            android:text="@string/signup"
             android:textColor="#FFF"
-            android:onClick="userClick"
+            android:onClick="userRegister"
             android:background="@color/appColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wrapper_password" />
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_confirmpassword" />
 
         <TextView
             android:id="@+id/textViewRegister"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="18dp"
-            android:text="@string/orregister"
+            android:text="@string/orlogin"
             android:clickable="true"
             android:focusable="true"
+            android:textSize="17sp"
             android:textColor="@color/textWarning"
-            android:onClick="goToRegister"
+            android:onClick="goToLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
-        <TextView
-            android:id="@+id/textViewForgot"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/forgot"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="forgotPassView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRegister" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
