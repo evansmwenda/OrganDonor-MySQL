@@ -2,10 +2,14 @@ package com.quest.organdonor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.quest.organdonor.Authentication.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity {
     private EditText mEmailField;
@@ -23,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void forgotPassView(View view) {
         //redirect to forgot password view
+        Toast.makeText(this, "forgot password screen", Toast.LENGTH_SHORT).show();
     }
 
     public void goToRegister(View view) {
         //redirect to register screen
+        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     private boolean validateForm() {

@@ -11,8 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Authentication.RegisterActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Authentication.RegisterActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
