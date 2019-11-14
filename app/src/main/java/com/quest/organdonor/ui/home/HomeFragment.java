@@ -44,4 +44,6 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
+
+    //add code to display recycler view with its items
 }

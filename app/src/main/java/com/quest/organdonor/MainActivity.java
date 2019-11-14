@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private  String user_email,password,user_id="";
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private static final String TAG = "quest";
+    private static final String TAG = "mwenda";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

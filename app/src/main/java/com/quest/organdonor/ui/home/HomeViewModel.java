@@ -27,7 +27,7 @@ public class HomeViewModel extends ViewModel {
     private MutableLiveData<String> mText;
     //private MutableLiveData<ArrayList<ProductsModel>> mPostsList;
     public ArrayList<ProductsModel> mPostsList= new ArrayList<>();
-    private static final String TAG = "quest";
+    private static final String TAG = "mwenda";
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
