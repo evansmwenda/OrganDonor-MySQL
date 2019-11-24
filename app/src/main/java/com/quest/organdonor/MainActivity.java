@@ -35,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
         //check shared preferences for token
         sharedPreferences=getSharedPreferences("login",MODE_PRIVATE);
-        user_id=sharedPreferences.getString("user_id","");
+        user_id=sharedPreferences.getString("user_id","0");
         Log.d(TAG, "onCreate: user_id->"+user_id);
 
 
         //if user id  not empty -> user had not logged out
         if(!TextUtils.isEmpty(user_id)){
             //redirect to Home screen
-            Intent intent = new Intent(this,HomeActivity.class);
+            Intent intent = new Intent(this,Home2Activity.class);
             startActivity(intent);
         }
 
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signIn(String email, String password) {
+        Log.d(TAG, "signIn: clicked signin");
         //fetch data here
         String URL = API.CARFIX_LOGIN;
         AndroidNetworking.post(URL)
