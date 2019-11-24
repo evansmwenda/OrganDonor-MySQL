@@ -1,4 +1,4 @@
-package com.quest.organdonor.Adapters;
+package com.quest.organdonor.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,17 +9,16 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.quest.organdonor.Models.ProductsModel;
 import com.quest.organdonor.R;
+import com.quest.organdonor.ui.home.pojo.Message;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private ProductsModel productsModel;
-    public List<ProductsModel> productsModelList;
+    private Message productsModel;
+    public List<Message> productsModelList;
     private Context mCtx;
 
     // Provide a reference to the views for each data item
@@ -39,7 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Context mCtx,List<ProductsModel> productsModelList) {
+    public MyAdapter(Context mCtx,List<Message> productsModelList) {
         this.mCtx = mCtx;
         this.productsModelList = productsModelList;
     }

@@ -1,4 +1,4 @@
-package com.quest.organdonor.Authentication;
+package com.quest.organdonor.authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +14,8 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.quest.organdonor.App.API;
-import com.quest.organdonor.App.Constants;
+import com.quest.organdonor.constants.Api;
+import com.quest.organdonor.constants.Constants;
 import com.quest.organdonor.MainActivity;
 import com.quest.organdonor.R;
 
@@ -104,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void signUp(String username, String email, String password) {
         //api endpoint here
-        String URL= API.CARFIX_REGISTER;
+        String URL= Api.BASE_URL;//.CARFIX_REGISTER;
 
         AndroidNetworking.post(URL)
                 .addBodyParameter("username", username)

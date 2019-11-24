@@ -1,23 +1,31 @@
-package com.quest.organdonor.Models;
+package com.quest.organdonor.ui.home.pojo;
 
-public class ProductsModel {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class Message {
+
+    @SerializedName("id")
+    @Expose
     private String id;
+    @SerializedName("title")
+    @Expose
     private String title;
-    private String cat_id;
+    @SerializedName("cat_id")
+    @Expose
+    private String catId;
+    @SerializedName("description")
+    @Expose
     private String description;
+    @SerializedName("price")
+    @Expose
     private String price;
+    @SerializedName("image")
+    @Expose
     private String image;
+    @SerializedName("random")
+    @Expose
     private String random;
-
-    public ProductsModel(String id, String title, String cat_id, String description, String price, String image, String random) {
-        this.id = id;
-        this.title = title;
-        this.cat_id = cat_id;
-        this.description = description;
-        this.price = price;
-        this.image = image;
-        this.random = random;
-    }
 
     public String getId() {
         return id;
@@ -35,12 +43,12 @@ public class ProductsModel {
         this.title = title;
     }
 
-    public String getCat_id() {
-        return cat_id;
+    public String getCatId() {
+        return catId;
     }
 
-    public void setCat_id(String cat_id) {
-        this.cat_id = cat_id;
+    public void setCatId(String catId) {
+        this.catId = catId;
     }
 
     public String getDescription() {
@@ -74,4 +82,5 @@ public class ProductsModel {
     public void setRandom(String random) {
         this.random = random;
     }
+
 }

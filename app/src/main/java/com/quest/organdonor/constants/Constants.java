@@ -1,4 +1,4 @@
-package com.quest.organdonor.App;
+package com.quest.organdonor.constants;
 
 import android.app.Activity;
 import android.content.Context;

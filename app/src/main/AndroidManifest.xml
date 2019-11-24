@@ -14,13 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Home2Activity"></activity>
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Authentication.RegisterActivity"
+            android:name=".authentication.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".MainActivity"

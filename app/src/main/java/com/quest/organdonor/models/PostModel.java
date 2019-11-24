@@ -1,4 +1,4 @@
-package com.quest.organdonor.Models;
+package com.quest.organdonor.models;
 
 public class PostModel {
 

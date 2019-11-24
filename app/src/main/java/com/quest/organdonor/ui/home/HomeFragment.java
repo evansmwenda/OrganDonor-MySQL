@@ -1,6 +1,5 @@
 package com.quest.organdonor.ui.home;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,15 +16,11 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quest.organdonor.Adapters.MyAdapter;
-import com.quest.organdonor.Models.ProductsModel;
+import com.quest.organdonor.adapters.MyAdapter;
 import com.quest.organdonor.R;
+import com.quest.organdonor.ui.home.pojo.Message;
 
 import java.util.List;
-
-import cn.pedant.SweetAlert.SweetAlertDialog;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class HomeFragment extends Fragment {
 
@@ -76,15 +71,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        homeViewModel.getAllPosts().observe(this, new Observer<List<ProductsModel>>() {
+        homeViewModel.getProducts().observe(this, new Observer<List<Message>>() {
             @Override
-            public void onChanged(List<ProductsModel> productsModels) {
-                Log.d("mwenda", "onChanged: "+productsModels.toString());
-                Toast.makeText(getActivity(), "data fetched"+productsModels.toString(), Toast.LENGTH_SHORT).show();
+            public void onChanged(List<Message> messages) {
+                Log.d("mwenda", "onChanged: "+messages.toString());
+                Toast.makeText(getActivity(), "data fetched"+messages.get(0).toString(), Toast.LENGTH_SHORT).show();
                 // specify an adapter (see also next example)
-                mAdapter = new MyAdapter(getActivity(),productsModels);
+                mAdapter = new MyAdapter(getActivity(),messages);
                 recyclerView.setAdapter(mAdapter);
+
             }
+
+
         });
     }
 

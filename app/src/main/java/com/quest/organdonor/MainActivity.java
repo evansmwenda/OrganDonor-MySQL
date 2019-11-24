@@ -15,9 +15,9 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.quest.organdonor.App.API;
-import com.quest.organdonor.App.Constants;
-import com.quest.organdonor.Authentication.RegisterActivity;
+import com.quest.organdonor.constants.Api;
+import com.quest.organdonor.constants.Constants;
+import com.quest.organdonor.authentication.RegisterActivity;
 
 import org.json.JSONObject;
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         //if user id  not empty -> user had not logged out
         if(!TextUtils.isEmpty(user_id)){
             //redirect to Home screen
-            Intent intent = new Intent(this,Home2Activity.class);
+            Intent intent = new Intent(this,HomeActivity.class);
             startActivity(intent);
         }
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn: clicked signin");
         //fetch data here
-        String URL = API.CARFIX_LOGIN;
+        String URL = Api.BASE_URL;//CARFIX_LOGIN;
         AndroidNetworking.post(URL)
                 .addBodyParameter("email_address", email)
                 .addBodyParameter("password", password)

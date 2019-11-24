@@ -56,4 +56,9 @@ dependencies {
 
     //sweet alert dialog
     implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+
+
+    //retrofit dependency
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 }
