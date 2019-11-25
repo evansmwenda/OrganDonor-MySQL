@@ -16,10 +16,13 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.quest.organdonor.constants.Api;
+import com.quest.organdonor.constants.AppSignatureHelper;
 import com.quest.organdonor.constants.Constants;
 import com.quest.organdonor.authentication.RegisterActivity;
 
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private EditText mEmailField;
@@ -35,8 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         //check shared preferences for token
         sharedPreferences=getSharedPreferences("login",MODE_PRIVATE);
-        user_id=sharedPreferences.getString("user_id","0");
+        user_id=sharedPreferences.getString("user_id","");
         Log.d(TAG, "onCreate: user_id->"+user_id);
+
+        AppSignatureHelper signatureHelper = new AppSignatureHelper(this);
+        ArrayList<String> appCodes  = signatureHelper.getAppSignatures();
+
+        Log.d(TAG, "onCreate: mwenda"+appCodes.get(0));
 
 
         //if user id  not empty -> user had not logged out
